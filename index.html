@@ -24,16 +24,16 @@
             -webkit-user-select: none;
         }
         
-        body {
+        html, body {
+            overflow: hidden;
+            height: 100%;
             font-family: 'Poppins', sans-serif;
             background: var(--gradient-dark);
             color: var(--text-light);
             line-height: 1.7;
-            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 20px;
         }
         
         .container {
@@ -47,6 +47,20 @@
             position: relative;
             overflow: hidden;
             border: 1px solid rgba(106, 17, 203, 0.2);
+            margin: 20px;
+            max-height: 95vh;
+            overflow-y: auto;
+        }
+        
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .container::-webkit-scrollbar {
+            display: none;
+        }
+        
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .container {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
         }
         
         .container::before {
@@ -241,6 +255,16 @@
             margin-bottom: 8px;
         }
         
+        .activation-note {
+            background: rgba(255, 107, 107, 0.1);
+            border-left: 4px solid #FF6B6B;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+        
         .footer {
             text-align: center;
             margin-top: 30px;
@@ -375,7 +399,7 @@
                 <img src="https://i.postimg.cc/02W13rkY/file-00000000bee861f7bf7ff021fe761bb2.png" class="app-icon" alt="App Icon">
             </div>
             <h1>XTREME AVIATOR SHA512 HASH ULTRA PREDICTOR PRO</h1>
-            <span class="version">v2.0.0 ULTRA</span>
+            <span class="version">v3.0.0 ULTRA</span>
             <p class="description">Advanced prediction technology with SHA512 encryption</p>
         </div>
         
@@ -386,8 +410,12 @@
         
         <div class="download-options">
             <a href="#" id="download-btn" class="btn btn-primary">
-                Download APK (7.3 MB)
+                Download APK (52.4 MB)
             </a>
+            
+            <div class="activation-note">
+                <strong>Note:</strong> Activation code required after installation.
+            </div>
             
             <a href="#" id="whatsapp-btn" class="btn btn-outline">
                 WhatsApp for Activation
@@ -406,8 +434,7 @@
         </div>
         
         <div class="footer">
-            <p>© 2025 XTREME PREDICTOR TECHNOLOGIES. All rights reserved.</p>
-            <p>Activation code required after installation.</p>
+            <p>© 2025 XTREME PREDICTOR TECHNOLOGIES</p>
         </div>
     </div>
 
