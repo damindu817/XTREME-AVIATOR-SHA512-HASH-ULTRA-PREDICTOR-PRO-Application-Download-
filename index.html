@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XTREME AVIATOR SHA512 HASH ULTRA PREDICTOR PRO</title>
+    <style>
+        :root {
+            --gradient-primary: linear-gradient(135deg, #FF6B6B 0%, #6A11CB 50%, #4ECDC4 100%);
+            --gradient-secondary: linear-gradient(135deg, #6A11CB 0%, #FF6B6B 100%);
+            --gradient-accent: linear-gradient(135deg, #4ECDC4 0%, #6A11CB 100%);
+            --gradient-dark: linear-gradient(135deg, #1A1A2E 0%, #16213E 100%);
+            --text-light: #F8F9FA;
+            --text-muted: #ADB5BD;
+            --shadow-primary: 0 10px 30px rgba(106, 17, 203, 0.4);
+            --shadow-secondary: 0 5px 20px rgba(255, 107, 107, 0.3);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--gradient-dark);
+            color: var(--text-light);
+            line-height: 1.7;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: rgba(26, 26, 46, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: var(--shadow-primary);
+            padding: 40px;
+            width: 100%;
+            max-width: 450px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(106, 17, 203, 0.2);
+        }
+        
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: var(--gradient-primary);
+        }
+        
+        .app-header {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .app-icon-container {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 25px;
+            border-radius: 24px;
+            box-shadow: 0 0 0 3px rgba(106, 17, 203, 0.5);
+            background: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            border: none;
+        }
+        
+        .app-icon {
+            width: 110px;
+            height: 110px;
+            object-fit: contain;
+            border-radius: 18px;
+            padding: 5px;
+            position: relative;
+            z-index: 1;
+            border: 2px solid transparent;
+            border-image: var(--gradient-primary) 1;
+        }
+        
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .version {
+            background: var(--gradient-accent);
+            color: var(--text-light);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin-bottom: 15px;
+            font-weight: 500;
+            box-shadow: 0 3px 10px rgba(78, 205, 196, 0.3);
+        }
+        
+        .description {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 5px;
+        }
+        
+        .qr-section {
+            background: rgba(26, 26, 46, 0.6);
+            padding: 25px;
+            border-radius: 16px;
+            margin: 25px 0;
+            text-align: center;
+            border: 1px solid rgba(106, 17, 203, 0.3);
+            position: relative;
+            overflow: hidden;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .qr-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-primary);
+        }
+        
+        .qr-code {
+            width: 200px;
+            height: 200px;
+            margin: 10px auto;
+            border-radius: 12px;
+            border: 1px solid rgba(78, 205, 196, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            background: white;
+            padding: 10px;
+        }
+        
+        .qr-code:hover {
+            transform: scale(1.03);
+        }
+        
+        .download-options {
+            margin: 25px 0;
+            position: relative;
+        }
+        
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 16px;
+            border-radius: 12px;
+            font-weight: 600;
+            text-align: center;
+            text-decoration: none;
+            margin: 15px 0;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: var(--text-light);
+            box-shadow: var(--shadow-primary);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .btn-primary::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(
+                to right,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.1) 50%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            animation: shine 3s infinite;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(106, 17, 203, 0.5);
+        }
+        
+        .btn-primary:active {
+            transform: translateY(1px);
+        }
+        
+        .btn-outline {
+            border: 2px solid #4ECDC4;
+            color: #4ECDC4;
+            background: transparent;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline:hover {
+            background: rgba(78, 205, 196, 0.1);
+            border-color: #FF6B6B;
+            color: #FF6B6B;
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.2);
+        }
+        
+        .instructions {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 25px;
+            padding: 20px;
+            background: rgba(26, 26, 46, 0.9);
+            border-radius: 12px;
+            border-left: 4px solid #6A11CB;
+            position: relative;
+        }
+        
+        .instructions::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-primary);
+        }
+        
+        .instructions ol {
+            padding-left: 20px;
+        }
+        
+        .instructions li {
+            margin-bottom: 8px;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+        
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 100;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            background: var(--gradient-dark);
+            padding: 30px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            border: 1px solid #6A11CB;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+        }
+        
+        .progress-container {
+            width: 100%;
+            height: 20px;
+            background: rgba(26, 26, 46, 0.8);
+            border-radius: 10px;
+            margin: 20px 0;
+            overflow: hidden;
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+        }
+        
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background: var(--gradient-primary);
+            border-radius: 10px;
+            transition: width 0.3s ease;
+            box-shadow: 0 0 10px rgba(106, 17, 203, 0.5);
+        }
+        
+        .countdown {
+            font-size: 1.2rem;
+            color: #4ECDC4;
+            margin: 15px 0;
+            font-weight: 600;
+        }
+        
+        .download-direct {
+            display: block;
+            margin-top: 15px;
+            color: #FF6B6B;
+            text-decoration: underline;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        
+        .download-direct:hover {
+            color: #6A11CB;
+        }
+        
+        .skip-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--gradient-secondary);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            z-index: 10;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .skip-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+        
+        @keyframes shine {
+            0% { left: -100%; }
+            20% { left: 100%; }
+            100% { left: 100%; }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 20px;
+                border-radius: 16px;
+            }
+            
+            .app-icon-container {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .app-icon {
+                width: 90px;
+                height: 90px;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+            }
+            
+            .qr-code {
+                width: 180px;
+                height: 180px;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="app-header">
+            <div class="app-icon-container">
+                <img src="https://i.postimg.cc/02W13rkY/file-00000000bee861f7bf7ff021fe761bb2.png" class="app-icon" alt="App Icon">
+            </div>
+            <h1>XTREME AVIATOR SHA512 HASH ULTRA PREDICTOR PRO</h1>
+            <span class="version">v3.0.0 ULTRA</span>
+            <p class="description">Advanced prediction technology with SHA512 encryption</p>
+        </div>
+        
+        <div class="qr-section">
+            <p>Scan to install on your mobile device</p>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://drive.google.com/drive/folders/110cUV1iFLWl_1TC38C7jyyJcgJnYldNI" class="qr-code" alt="Download QR Code">
+        </div>
+        
+        <div class="download-options">
+            <a href="#" id="download-btn" class="btn btn-primary">
+                Download APK (52.4 MB)
+            </a>
+            
+            <a href="#" id="whatsapp-btn" class="btn btn-outline">
+                WhatsApp for Activation
+            </a>
+        </div>
+        
+        <div class="instructions">
+            <p><strong>Installation instructions:</strong></p>
+            <ol>
+                <li>Download the APK file</li>
+                <li>Open the downloaded file</li>
+                <li>Allow installation from unknown sources if prompted</li>
+                <li>Follow the on-screen instructions</li>
+                <li>Contact us via WhatsApp to purchase activation code</li>
+            </ol>
+        </div>
+        
+        <div class="footer">
+            <p>© 2025 XTREME PREDICTOR TECHNOLOGIES. All rights reserved.</p>
+            <p>Activation code required after installation.</p>
+        </div>
+    </div>
+
+    <!-- Download Modal -->
+    <div id="download-modal" class="modal">
+        <div class="modal-content">
+            <h3 style="background: var(--gradient-primary); -webkit-background-clip: text; background-clip: text; color: transparent;">Download Starting...</h3>
+            <div class="countdown" id="countdown">5</div>
+            <div class="progress-container">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+            <p style="color: var(--text-muted); margin-top: 15px;">Your download will start automatically</p>
+            <a href="https://drive.google.com/drive/folders/110cUV1iFLWl_1TC38C7jyyJcgJnYldNI" class="download-direct" id="direct-download">Click here if download doesn't start</a>
+        </div>
+    </div>
+
+    <!-- Skip Button -->
+    <button class="skip-btn" id="skip-btn">Skip This Page</button>
+
+    <script>
+        // Prevent text selection and copy/paste
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+        
+        document.addEventListener('copy', function(e) {
+            e.preventDefault();
+        });
+        
+        document.addEventListener('cut', function(e) {
+            e.preventDefault();
+        });
+        
+        // Download button functionality
+        document.getElementById('download-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            const modal = document.getElementById('download-modal');
+            modal.style.display = 'flex';
+            
+            let count = 5;
+            const countdown = document.getElementById('countdown');
+            const progressBar = document.getElementById('progress-bar');
+            
+            const timer = setInterval(() => {
+                count--;
+                countdown.textContent = count;
+                progressBar.style.width = `${(5 - count) * 20}%`;
+                
+                if (count <= 0) {
+                    clearInterval(timer);
+                    window.location.href = 'https://drive.google.com/drive/folders/110cUV1iFLWl_1TC38C7jyyJcgJnYldNI';
+                }
+            }, 1000);
+        });
+        
+        document.getElementById('direct-download').addEventListener('click', function() {
+            document.getElementById('download-modal').style.display = 'none';
+        });
+        
+        // WhatsApp button functionality
+        document.getElementById('whatsapp-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            const message = encodeURIComponent("I want to purchase an activation code for XTREME AVIATOR SHA512 HASH ULTRA PREDICTOR PRO");
+            window.open(`https://wa.me/94763546029?text=${message}`, '_blank');
+        });
+        
+        // Skip page functionality
+        document.getElementById('skip-btn').addEventListener('click', function() {
+            window.location.href = 'https://damindu817.github.io/xtreme_predictor_menu-/';
+        });
+    </script>
+</body>
+</html>
