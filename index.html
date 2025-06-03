@@ -70,26 +70,19 @@
             width: 120px;
             height: 120px;
             margin: 0 auto 25px;
-            border-radius: 24px;
-            box-shadow: 0 0 0 3px rgba(106, 17, 203, 0.5);
-            background: transparent;
+            border-radius: 18px;
             display: flex;
             justify-content: center;
             align-items: center;
-            overflow: hidden;
-            border: none;
+            border: 2px solid #6A11CB;
         }
         
         .app-icon {
             width: 110px;
             height: 110px;
             object-fit: contain;
-            border-radius: 18px;
+            border-radius: 12px;
             padding: 5px;
-            position: relative;
-            z-index: 1;
-            border: 2px solid transparent;
-            border-image: var(--gradient-primary) 1;
         }
         
         h1 {
@@ -236,18 +229,8 @@
             padding: 20px;
             background: rgba(26, 26, 46, 0.9);
             border-radius: 12px;
-            border-left: 4px solid #6A11CB;
+            border: 1px solid #6A11CB;
             position: relative;
-        }
-        
-        .instructions::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background: var(--gradient-primary);
         }
         
         .instructions ol {
@@ -491,9 +474,9 @@
             window.open(`https://wa.me/94763546029?text=${message}`, '_blank');
         });
         
-        // Skip page functionality
+        // Skip page functionality - replaces history so back button won't return
         document.getElementById('skip-btn').addEventListener('click', function() {
-            window.location.href = 'https://damindu817.github.io/xtreme_predictor_menu-/';
+            window.location.replace('https://damindu817.github.io/xtreme_predictor_menu-/');
         });
     </script>
 </body>
