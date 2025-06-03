@@ -294,20 +294,30 @@
             border: 1px solid #6A11CB;
             box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
             backdrop-filter: blur(10px);
+            position: relative;
         }
         
         .close-modal {
             position: absolute;
             top: 15px;
             right: 15px;
-            color: var(--text-muted);
-            font-size: 1.5rem;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: rgba(255, 107, 107, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--text-light);
+            font-size: 1.2rem;
             cursor: pointer;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
+            border: none;
         }
         
         .close-modal:hover {
-            color: #FF6B6B;
+            background: rgba(255, 107, 107, 0.4);
+            transform: rotate(90deg);
         }
         
         .progress-container {
@@ -453,7 +463,7 @@
     <!-- Download Modal -->
     <div id="download-modal" class="modal">
         <div class="modal-content">
-            <span class="close-modal">&times;</span>
+            <button class="close-modal">&times;</button>
             <h3 style="background: var(--gradient-primary); -webkit-background-clip: text; background-clip: text; color: transparent;">Download Starting...</h3>
             <div class="countdown" id="countdown">5</div>
             <div class="progress-container">
@@ -532,25 +542,38 @@
         
         // Skip page functionality - replaces history so back button won't return
         document.getElementById('skip-btn').addEventListener('click', function() {
-            window.location.replace('https://damindu817.github.io/xtreme_predictor_menu-/');
-        });
-        
-        // Close the app when back button is pressed from main page
-        window.addEventListener('popstate', function(event) {
-            if (window.history.state && window.history.state.page === 'main') {
-                // For webview apps - this will close the app
-                if (window.navigator.app && window.navigator.app.exitApp) {
-                    navigator.app.exitApp();
-                } 
-                // For browsers - this will close the tab/window
-                else {
-                    window.close();
-                }
+            // For Android webview
+            if (window.navigator.app && window.navigator.app.exitApp) {
+                navigator.app.exitApp();
+            } 
+            // For iOS webview
+            else if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.closeHandler) {
+                window.webkit.messageHandlers.closeHandler.postMessage('close');
+            }
+            // For browsers
+            else {
+                window.location.replace('https://damindu817.github.io/xtreme_predictor_menu-/');
+                // Prevent going back to this page
+                window.history.pushState(null, null, window.location.href);
+                window.onpopstate = function() {
+                    window.history.go(1);
+                };
             }
         });
         
-        // Set initial history state
-        history.pushState({page: 'main'}, null, null);
+        // Prevent going back to this page from the next page
+        window.history.pushState(null, null, window.location.href);
+        window.addEventListener('popstate', function(event) {
+            window.history.go(1);
+            // For Android webview
+            if (window.navigator.app && window.navigator.app.exitApp) {
+                navigator.app.exitApp();
+            }
+            // For iOS webview
+            else if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.closeHandler) {
+                window.webkit.messageHandlers.closeHandler.postMessage('close');
+            }
+        });
     </script>
 </body>
 </html>
