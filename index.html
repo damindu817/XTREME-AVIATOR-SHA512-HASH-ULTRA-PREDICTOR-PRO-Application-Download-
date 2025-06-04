@@ -573,7 +573,7 @@
             window.open(`https://wa.me/94763546029?text=${message}`, '_blank');
         });
         
-        // Skip button functionality
+        // Skip button functionality - Modified to completely close the app
         document.getElementById('skip-btn').addEventListener('click', function() {
             // For Android WebView
             if (window.navigator.app && window.navigator.app.exitApp) {
@@ -585,12 +585,8 @@
             }
             // For regular browsers
             else {
-                window.location.replace('https://damindu817.github.io/xtreme_predictor_menu-/');
-                // Prevent going back to this page
-                window.history.pushState(null, null, window.location.href);
-                window.onpopstate = function() {
-                    window.history.go(1);
-                };
+                window.open('', '_self').close(); // More reliable way to close window
+                window.close(); // Fallback
             }
         });
     </script>
