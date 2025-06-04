@@ -499,9 +499,18 @@
         const countdown = document.getElementById('countdown');
         const progressBar = document.getElementById('progress-bar');
         
+        // Track modal state
+        let isModalOpen = false;
+        
+        // Initialize history state
+        history.pushState({page: 'main'}, null, null);
+        
+        // Download button click handler
         downloadBtn.addEventListener('click', function(e) {
             e.preventDefault();
             modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            isModalOpen = true;
             
             let count = 5;
             countdown.textContent = count;
@@ -519,17 +528,41 @@
             }, 1000);
         });
         
-        // Close modal functionality
-        closeModal.addEventListener('click', function() {
+        // Close modal function
+        function closeDownloadModal() {
             clearInterval(downloadTimer);
             modal.style.display = 'none';
-        });
+            document.body.style.overflow = 'auto';
+            isModalOpen = false;
+        }
+        
+        // Close modal when X button is clicked
+        closeModal.addEventListener('click', closeDownloadModal);
         
         // Close modal when clicking outside
         modal.addEventListener('click', function(e) {
             if (e.target === modal) {
-                clearInterval(downloadTimer);
-                modal.style.display = 'none';
+                closeDownloadModal();
+            }
+        });
+        
+        // Handle back button
+        window.addEventListener('popstate', function(event) {
+            if (isModalOpen) {
+                closeDownloadModal();
+                // Prevent further back navigation
+                history.pushState({page: 'main'}, null, null);
+            } else {
+                // Close the app when back button is pressed on main page
+                if (window.navigator.app && window.navigator.app.exitApp) {
+                    navigator.app.exitApp(); // Android WebView
+                } 
+                else if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.closeHandler) {
+                    window.webkit.messageHandlers.closeHandler.postMessage('close'); // iOS WebView
+                }
+                else {
+                    window.close(); // Regular browser
+                }
             }
         });
         
@@ -540,17 +573,17 @@
             window.open(`https://wa.me/94763546029?text=${message}`, '_blank');
         });
         
-        // Skip page functionality - replaces history so back button won't return
+        // Skip button functionality
         document.getElementById('skip-btn').addEventListener('click', function() {
-            // For Android webview
+            // For Android WebView
             if (window.navigator.app && window.navigator.app.exitApp) {
                 navigator.app.exitApp();
             } 
-            // For iOS webview
+            // For iOS WebView
             else if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.closeHandler) {
                 window.webkit.messageHandlers.closeHandler.postMessage('close');
             }
-            // For browsers
+            // For regular browsers
             else {
                 window.location.replace('https://damindu817.github.io/xtreme_predictor_menu-/');
                 // Prevent going back to this page
@@ -558,20 +591,6 @@
                 window.onpopstate = function() {
                     window.history.go(1);
                 };
-            }
-        });
-        
-        // Prevent going back to this page from the next page
-        window.history.pushState(null, null, window.location.href);
-        window.addEventListener('popstate', function(event) {
-            window.history.go(1);
-            // For Android webview
-            if (window.navigator.app && window.navigator.app.exitApp) {
-                navigator.app.exitApp();
-            }
-            // For iOS webview
-            else if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.closeHandler) {
-                window.webkit.messageHandlers.closeHandler.postMessage('close');
             }
         });
     </script>
