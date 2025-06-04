@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>XTREME AVIATOR SHA512 HASH ULTRA PREDICTOR PRO</title>
     <style>
         :root {
@@ -34,6 +34,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            touch-action: manipulation;
         }
         
         .container {
@@ -488,6 +489,31 @@
         });
         
         document.addEventListener('cut', function(e) {
+            e.preventDefault();
+        });
+        
+        // Prevent zooming with double-tap or pinch gestures
+        document.addEventListener('dblclick', function(e) {
+            e.preventDefault();
+        }, { passive: false });
+        
+        document.addEventListener('touchstart', function(event) {
+            if (event.touches.length > 1) {
+                event.preventDefault();
+            }
+        }, { passive: false });
+        
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', function(event) {
+            const now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, { passive: false });
+        
+        // Disable pinch zoom
+        document.addEventListener('gesturestart', function(e) {
             e.preventDefault();
         });
         
